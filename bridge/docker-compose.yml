@@ -1,0 +1,15 @@
+version: '3.7'
+
+networks:
+  default:
+
+services:
+  redis:
+    image: 'redis:5-alpine'
+  bridge:
+    image: bridge-arda:latest
+    ports:
+      - "5001:5000"
+    environment:
+      NODE_ENV: development
+      REDIS_URL: redis://redis:6379
