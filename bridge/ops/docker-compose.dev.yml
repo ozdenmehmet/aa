@@ -1,0 +1,24 @@
+version: '3.7'
+
+networks:
+  default:
+
+volumes:
+  redis:
+  
+services:
+  redis:
+    ports:
+      - "127.0.0.1:6379:6379"
+  bridge0:
+    ports:
+      - "127.0.0.1:5001:5001"
+    volumes:
+      - ../build:/root/build
+  nginx:
+    environment:
+      CONTAINER_NAME: node
+      APP_QTY: 1
+    depends_on:
+      - bridge0
+
