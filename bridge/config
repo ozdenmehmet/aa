@@ -1,0 +1,3 @@
+BRIDGE_URL=localhost
+CERTBOT_EMAIL=
+CLOUDFLARE=false
